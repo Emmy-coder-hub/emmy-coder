@@ -284,4 +284,99 @@ input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); }
   width: 132px;
   margin-left: 193px;
   margin-top: -133px;
+}/* responsiveness*/
+/* ===== HERO MEDIA RESPONSIVE ===== */
+.hero-media-wrapper {
+  width: 100%; /* full width */
+  max-width: 600px; /* optional: prevent too large on desktop */
+  overflow: hidden;
+  margin: auto;
+  border: 2px solid #333;
+}
+
+.hero-media {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.hero-media img {
+  width: 100%; /* each image takes full width */
+  flex-shrink: 0;
+}
+
+/* ===== FLEXIBLE GRIDS ===== */
+.about-grid, .track-grid, .facility-grid, .gallery-grid, .news-grid, .staff-grid, .download-grid, .jobs-grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.split {
+  grid-template-columns: 1fr; /* mobile default */
+}
+
+.form-grid {
+  grid-template-columns: 1fr; /* form fields stack on mobile */
+}
+
+/* ===== TEXT & HERO ===== */
+.hero h1 {
+  font-size: clamp(24px, 5vw, 36px);
+}
+
+.section-header h2 {
+  font-size: clamp(20px, 4vw, 28px);
+}
+
+/* ===== STATS ===== */
+.stats {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+/* ===== TOPBAR & NAV ===== */
+.topbar .container {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.nav .container {
+  flex-wrap: wrap;
+}
+
+/* ===== BUTTONS ===== */
+.hero-actions {
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== FOOTER ===== */
+.footer-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.footer-bottom {
+  margin-top: 70px;
+
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2,1fr); }
+  .split { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .stats { grid-template-columns: 1fr; }
+  .hero-actions { flex-direction: column; }
+  .about-grid, .track-grid, .facility-grid, .gallery-grid, .news-grid, .staff-grid, .download-grid, .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-grid { grid-template-columns: 1fr; }
+  .photo {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -120px;
+    margin-left: 223px;
+  }
 }
